@@ -105,7 +105,8 @@ pending → dispatched → in-transit → delivered
    - Health Check: `http://localhost:8080/actuator/health`
 
 ### Swagger UI:
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7c288699-ed17-44eb-8489-0d13fc8c572d" />
+<img width="1898" height="913" alt="image" src="https://github.com/user-attachments/assets/1065a303-53ae-4db1-a462-f08fa8d55e74" />
+
 
 ## API Usage Examples
 
