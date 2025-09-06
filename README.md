@@ -104,6 +104,9 @@ pending → dispatched → in-transit → delivered
    - Swagger UI: `http://localhost:8080/swagger-ui.html`
    - Health Check: `http://localhost:8080/actuator/health`
 
+### Swagger UI:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7c288699-ed17-44eb-8489-0d13fc8c572d" />
+
 ## API Usage Examples
 
 ### Create a New Shipment
