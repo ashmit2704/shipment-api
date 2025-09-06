@@ -107,11 +107,11 @@ pending → dispatched → in-transit → delivered
 ### Swagger UI:
 <img width="1898" height="913" alt="image" src="https://github.com/user-attachments/assets/1065a303-53ae-4db1-a462-f08fa8d55e74" />
 
-
 ## API Usage Examples
 
 ### Create a New Shipment
 
+**Linux/macOS (curl):**
 ```bash
 curl -X POST http://localhost:8080/api/v1/shipments \
   -H "Content-Type: application/json" \
@@ -122,22 +122,65 @@ curl -X POST http://localhost:8080/api/v1/shipments \
   }'
 ```
 
+**Windows (curl):**
+```cmd
+curl -X POST http://localhost:8080/api/v1/shipments ^
+  -H "Content-Type: application/json" ^
+  -d "{\"orderId\": \"ORDER-001\", \"origin\": \"New York\", \"destination\": \"Los Angeles\"}"
+```
+
+**Windows (PowerShell):**
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/shipments" `
+  -Method Post `
+  -ContentType "application/json" `
+  -Body '{"orderId": "ORDER-001", "origin": "New York", "destination": "Los Angeles"}'
+```
+
 ### Get Shipment Details
 
+**Linux/macOS (curl):**
 ```bash
 curl http://localhost:8080/api/v1/shipments/ORDER-001
 ```
 
+**Windows (curl):**
+```cmd
+curl http://localhost:8080/api/v1/shipments/ORDER-001
+```
+
+**Windows (PowerShell):**
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/shipments/ORDER-001" -Method Get
+```
+
 ### Update Shipment Status
 
+**Linux/macOS (curl):**
 ```bash
 curl -X PATCH http://localhost:8080/api/v1/shipments/ORDER-001 \
   -H "Content-Type: application/json" \
   -d '{"status": "dispatched"}'
 ```
 
+**Windows (curl):**
+```cmd
+curl -X PATCH http://localhost:8080/api/v1/shipments/ORDER-001 ^
+  -H "Content-Type: application/json" ^
+  -d "{\"status\": \"dispatched\"}"
+```
+
+**Windows (PowerShell):**
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/shipments/ORDER-001" `
+  -Method Patch `
+  -ContentType "application/json" `
+  -Body '{"status": "dispatched"}'
+```
+
 ### Get All Shipments
 
+**Linux/macOS (curl):**
 ```bash
 # Get all shipments
 curl http://localhost:8080/api/v1/shipments
@@ -152,10 +195,51 @@ curl http://localhost:8080/api/v1/shipments?origin=New%20York
 curl "http://localhost:8080/api/v1/shipments?status=pending&origin=New York"
 ```
 
+**Windows (curl):**
+```cmd
+REM Get all shipments
+curl http://localhost:8080/api/v1/shipments
+
+REM Filter by status
+curl http://localhost:8080/api/v1/shipments?status=pending
+
+REM Filter by origin
+curl "http://localhost:8080/api/v1/shipments?origin=New York"
+
+REM Filter by both status and origin
+curl "http://localhost:8080/api/v1/shipments?status=pending&origin=New York"
+```
+
+**Windows (PowerShell):**
+```powershell
+# Get all shipments
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/shipments" -Method Get
+
+# Filter by status
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/shipments?status=pending" -Method Get
+
+# Filter by origin
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/shipments?origin=New York" -Method Get
+
+# Filter by both status and origin
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/shipments?status=pending&origin=New York" -Method Get
+```
+
 ### Get Statistics
 
+**Linux/macOS (curl):**
 ```bash
 curl http://localhost:8080/api/v1/shipments/stats
+```
+
+**Windows (curl):**
+```cmd
+curl http://localhost:8080/api/v1/shipments/stats
+```
+
+**Windows (PowerShell):**
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/api/v1/shipments/stats" -Method Get
 ```
 
 ## Request/Response Examples
