@@ -1,0 +1,22 @@
+# Maven target folder
+/target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Node.js (since you also have frontend)
+node_modules/
+dist/
+build/
